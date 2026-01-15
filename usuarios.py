@@ -112,38 +112,4 @@ class GerenciamentoLivros:
                 return livro
         return None
 
-# Exemplo de Uso
-if __name__ == "__main__":
-    sistema = GerenciamentoLivros()
-    sistema.listar_livros()
 
-    # Criando Usuários (Herança)
-    estudante = Estudante("Alice", "alice@email.com", "E123")
-    professor = Professor("Bob", "bob@email.com", "P456")
-
-    print(f"\n--- Teste de Polimorfismo e Associação ---")
-    
-    # Buscando livros para empréstimo
-    l1 = sistema.buscar_livro_por_codigo("L001")
-    l2 = sistema.buscar_livro_por_codigo("L002")
-    l3 = sistema.buscar_livro_por_codigo("L003")
-    l4 = sistema.buscar_livro_por_codigo("L004") 
-    l5 = sistema.buscar_livro_por_codigo("L005")
-
-    # Testando Limite Estudante (3 livros)
-    print("\n[Estudante tentando pegar 4 livros]")
-    estudante.emprestar_livro(l1)
-    estudante.emprestar_livro(l2)
-    estudante.emprestar_livro(l3)
-    estudante.emprestar_livro(l4) # Deve falhar
-
-    estudante.listar_emprestimos()
-
-    # Testando Limite Professor (5 livros)
-    print("\n[Professor tentando pegar 4 livros - Deve conseguir]")
-    professor.emprestar_livro(l1) # Livros são objetos independentes na memória, aqui é só simulação
-    professor.emprestar_livro(l2)
-    professor.emprestar_livro(l3)
-    professor.emprestar_livro(l4)
-    
-    professor.listar_emprestimos()
