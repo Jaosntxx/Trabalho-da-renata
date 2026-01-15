@@ -1,3 +1,4 @@
+#definição da classe usuario e funções para cadastrar e listar usuarios
 class Usuario:
     def __init__(self, nome, email, matricula, cargo):
         self.nome = nome
@@ -12,7 +13,7 @@ class Usuario:
 
 
 usuarios = []
-
+#função para cadastrar usuario de acordo para a bibliotecaria
 def cadastrar_usuario():
     nome = input("Nome: ")
     email = input("E-mail: ")
@@ -23,7 +24,7 @@ def cadastrar_usuario():
     usuarios.append(usuario)
 
     print("Usuário cadastrado com sucesso!")
-
+#incersão da função para listar usuarios cadastrados
 def listar_usuarios():
     if not usuarios:
         print("Nenhum usuário cadastrado.")
@@ -45,3 +46,4 @@ Status: {status}
 """)
 
 print(cadastrar_usuario())
+
